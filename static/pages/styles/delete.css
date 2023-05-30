@@ -1,0 +1,27 @@
+.button__delete {
+    width: 100%;
+
+    background-color: rgb(255,10,50);
+
+    font-family: 'Source Sans Pro';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+
+    padding: 0 auto;
+    padding-bottom: 20px;
+    padding-top: 20px;
+
+    color: #FFFFFF;
+
+    border: none;
+
+    border-radius: 10px;
+
+    box-sizing: border-box;
+}
+
+.custom_delete_container {
+    justify-content: center;
+}
