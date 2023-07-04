@@ -39,13 +39,20 @@ services:
       sh -c " python manage.py makemigrations &&
               python manage.py migrate &&
               python manage.py collectstatic --noinput &&
-              celery -A server worker -l info --detach &&
               gunicorn server.wsgi:application --bind 0.0.0.0:4000"
     ports:
       - "4000:4000"
 
   redis:
     image: redis:latest 
+
+  celery:
+    build:
+      dockerfile: src/backend/Dockerfile
+      context: .
+    command: celery -A server worker -l info --detach
+    depends_on:
+      - redis
 
 volumes:
   media_volume:
